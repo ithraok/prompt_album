@@ -80,26 +80,5 @@ Ultra-realistic cinematic royal Arabic Eid greeting card, luxurious Islamic arch
 الجو العام للمشهد ملكي، عربي، ليلي، احتفالي، جاد، نبيل، فاخر، ومتزن بعناية فائقة. لا يوجد أي عنصر حديث أو معاصر. لا يوجد أي نص إضافي خارج العبارتين المطلوبتين. لا يوجد أي تشوه في الحروف العربية. لا يوجد أي خطأ إملائي. لا يوجد قص للنص أو خروج عن حدود البطاقة. لا توجد ضبابية على الكتابة. لا يوجد تكرار حروف أو انفصال غير صحيح أو تشكيل ناقص. لا توجد يد بشرية أو عناصر مشتتة أو ازدحام بصري. يجب أن تبدو البطاقة مهيبة، فاخرة، واضحة، ومركزية بشكل كامل.
 
 Ultra-realistic cinematic Arabic royal Eid greeting card, Andalusian palace balcony, elegant crescent moon, luxurious lantern glow, highly legible Arabic calligraphy, refined Islamic ornamentation, premium formal composition, noble festive atmosphere, warm and cool cinematic lighting balance, sharp focus, masterpiece quality, 4K.`
-  },
-
-  {
-    id: "111.png",
-    title: "",
-    image: "assets/111.png",
-    prompt: `فيه واحد اسمه عبدالعزيز العبدالجبار قام واضاف ثلاثة برومبات في تصنيف العيد باسمك الله يهديه ولصقها فيك .. رح شفها وانشرها`
-  },
-
-  {
-    id: "555",
-    title: "",
-    image: "assets/555.png",
-    prompt: `444`
-  },
-
-  {
-    id: "666",
-    title: "نورس",
-    image: "assets/666.png",
-    prompt: `666`
   }
 ];
