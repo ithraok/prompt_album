@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ألبوم برومبتات العيد</title>
+  <meta name="description" content="ألبوم بصري مبسط لبرومبتات بطاقات العيد: صورة نموذجية وزر نسخ مباشر للبرومبت." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">ألبوم بصري مبسط</span>
+        <h1>نماذج جاهزة للنسخ</h1>
+        <p>شاهد النموذج، ثم انسخ البرومبت مباشرة. التعديل على الأسماء أو العبارات يتم يدويًا بعد النسخ حسب الحاجة.</p>
+      </div>
+      <div class="hero-meta">
+        <div class="stat">
+          <strong id="promptCount">0</strong>
+          <span>برومبتات</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="gallery" id="gallery"></section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <script src="prompts.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

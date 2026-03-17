@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>محرر prompts.js</title>
+  <meta name="description" content="محرر بصري بسيط لإضافة بطاقات جديدة إلى ملف prompts.js وتصدير النسخة المحدثة." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="info.css" />
+</head>
+<body>
+  <div class="page-shell editor-shell">
+    <header class="hero editor-hero">
+      <div class="hero-copy">
+        <span class="eyebrow">محرر داخلي بسيط</span>
+        <h1>محرر ملف prompts.js</h1>
+        <p>
+          أضف بطاقات جديدة بسهولة، ثم نزّل النسخة المحدثة من الملف وارفعها إلى المستودع بدل الملف القديم.
+          يمكن أيضًا استيراد ملف <code>prompts.js</code> من جهازك أو تحميل الملف الحالي من الموقع.
+        </p>
+      </div>
+      <div class="hero-meta editor-actions">
+        <button class="action-btn" id="loadCurrentBtn">تحميل الحالي من الموقع</button>
+        <button class="action-btn" id="importBtn">استيراد prompts.js</button>
+        <button class="action-btn" id="applyRawBtn">تطبيق المحرر</button>
+        <button class="action-btn" id="copyFileBtn">نسخ الملف</button>
+        <button class="action-btn primary" id="exportBtn">تصدير prompts.js</button>
+        <a class="action-btn ghost" href="index.html">العودة إلى الألبوم</a>
+      </div>
+      <input type="file" id="fileInput" accept=".js" hidden />
+    </header>
+
+    <main class="editor-main">
+      <section class="panel form-panel">
+        <div class="panel-head">
+          <h2>إضافة بطاقة جديدة</h2>
+          <p>املأ الحقول ثم اضغط <strong>إضافة البطاقة</strong>. إذا حمّلت بطاقة موجودة للتعديل فسيتم تحديثها.</p>
+        </div>
+
+        <div class="form-grid">
+          <label>
+            <span>id</span>
+            <div class="inline-input">
+              <input type="text" id="cardId" placeholder="new_card_id" />
+              <button type="button" class="mini-btn" id="slugBtn">توليد</button>
+            </div>
+          </label>
+
+          <label>
+            <span>العنوان الداخلي</span>
+            <input type="text" id="cardTitle" placeholder="اسم داخلي للبطاقة" />
+          </label>
+
+          <label>
+            <span>اسم الصورة فقط</span>
+            <input type="text" id="cardImage" placeholder="new-image.png" />
+            <small class="field-help">المسار يضاف تلقائيًا: <code>assets/</code></small>
+          </label>
+        </div>
+
+
+        <section class="preview-box" aria-label="معاينة الصورة">
+          <div class="preview-head">
+            <strong>معاينة الصورة</strong>
+            <span id="previewPath">assets/</span>
+          </div>
+          <div class="preview-stage" id="previewStage">
+            <img id="imagePreview" alt="معاينة الصورة" hidden />
+            <p id="previewHint">اكتب اسم الصورة هنا، ثم ارفع الصورة لاحقًا إلى مجلد <code>assets</code>. ستظهر المعاينة هنا إذا كانت الصورة موجودة.</p>
+          </div>
+        </section>
+
+        <label class="textarea-label">
+          <span>البرومبت الكامل</span>
+          <textarea id="cardPrompt" rows="14" placeholder="ألصق البرومبت الكامل هنا..."></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button class="action-btn primary" id="addBtn">إضافة البطاقة</button>
+          <button class="action-btn" id="clearBtn" type="button">تفريغ الحقول</button>
+        </div>
+      </section>
+
+      <section class="panel list-panel">
+        <div class="panel-head split-head">
+          <div>
+            <h2>البطاقات الحالية</h2>
+            <p>يمكنك تحميل أي بطاقة إلى الحقول للتعديل أو حذفها قبل التصدير.</p>
+          </div>
+          <div class="pill"><strong id="cardCount">0</strong><span>بطاقات</span></div>
+        </div>
+
+        <div id="cardList" class="card-list"></div>
+      </section>
+
+      <section class="panel raw-panel">
+        <div class="panel-head">
+          <h2>المحرر السفلي</h2>
+          <p>هذا هو الملف النهائي الذي سيتم تصديره باسم <code>prompts.js</code>.</p>
+        </div>
+        <textarea id="rawEditor" class="raw-editor" spellcheck="false"></textarea>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <script src="prompts.js"></script>
+  <script src="info.js"></script>
+</body>
+</html>
